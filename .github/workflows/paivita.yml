@@ -1,0 +1,47 @@
+name: Paivita Osakehinnat
+on:
+  schedule:
+    - cron: '0 * * * *' # Kerran tunnissa
+  workflow_dispatch: # Mahdollistaa manuaalisen käynnistyksen
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Asenna Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Asenna kirjastot
+        run: pip install yfinance
+      - name: Hae hinnat
+        run: |
+          python - <<EOF
+          import yfinance as yf
+          import json
+
+          # Tähän voit lisätä kaikki haluamasi tickerit
+          tickers = ["HUH1V.HE", "UPM.HE", "TAALA.HE", "TIETO.HE", "KESKOB.HE", "NDA-FI.HE", "NOKIA.HE", "TSLA"]
+          nimet = {"HUH1V.HE": "HUHTAMÄKI", "UPM.HE": "UPM-KYMMENE", "NDA-FI.HE": "NORDEA", "NOKIA.HE": "NOKIA"}
+          
+          data = []
+          for t in tickers:
+              try:
+                  s = yf.Ticker(t)
+                  p = s.fast_info['last_price']
+                  nimi = nimet.get(t, t.split('.')[0])
+                  data.append({"nimi": nimi, "hinta": round(p, 2)})
+              except:
+                  continue
+
+          with open('hinnat.json', 'w') as f:
+              json.dump(data, f, indent=4)
+          EOF
+      - name: Tallenna muutokset
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add hinnat.json
+          git commit -m "v54 hintapäivitys" || exit 0
+          git push
