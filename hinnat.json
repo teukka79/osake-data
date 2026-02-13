@@ -8,27 +8,35 @@
         "hinta": 27.75
     },
     {
-        "nimi": "TAALA",
+        "nimi": "TAALERI",
         "hinta": 7.26
     },
     {
-        "nimi": "TIETO",
+        "nimi": "TIETOEVRY",
         "hinta": 19.01
     },
     {
-        "nimi": "KESKOB",
+        "nimi": "KESKO B",
         "hinta": 21.44
     },
     {
-        "nimi": "NORDEA",
-        "hinta": 16.42
+        "nimi": "SAMPO",
+        "hinta": 8.93
     },
     {
-        "nimi": "NOKIA",
-        "hinta": 5.83
+        "nimi": "W\u00c4RTSIL\u00c4",
+        "hinta": 34.92
     },
     {
-        "nimi": "TSLA",
-        "hinta": 417.07
+        "nimi": "VALMET",
+        "hinta": 28.15
+    },
+    {
+        "nimi": "POSTI",
+        "hinta": 8.25
+    },
+    {
+        "nimi": "TITANIUM",
+        "hinta": 7.22
     }
 ]
