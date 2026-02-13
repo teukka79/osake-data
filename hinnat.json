@@ -1,1 +1,34 @@
-[]
+[
+    {
+        "nimi": "HUHTAM\u00c4KI",
+        "hinta": 31.46
+    },
+    {
+        "nimi": "UPM-KYMMENE",
+        "hinta": 27.75
+    },
+    {
+        "nimi": "TAALA",
+        "hinta": 7.26
+    },
+    {
+        "nimi": "TIETO",
+        "hinta": 19.01
+    },
+    {
+        "nimi": "KESKOB",
+        "hinta": 21.44
+    },
+    {
+        "nimi": "NORDEA",
+        "hinta": 16.42
+    },
+    {
+        "nimi": "NOKIA",
+        "hinta": 5.83
+    },
+    {
+        "nimi": "TSLA",
+        "hinta": 417.07
+    }
+]
