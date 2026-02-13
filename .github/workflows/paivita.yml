@@ -13,7 +13,7 @@ jobs:
       - name: Hae hinnat suoraan Google Sheetsistä
         run: |
           # Tämä curl-komento hakee valmiin JSON-datan Sheets-scriptistäsi
-          curl -L "https://script.google.com/macros/s/AKfycbxGeDCZYF6xKVXabFTLVinL7SvdPePHR34r09cODlOPjEX-n9crZaJdcs4xIPYuMTLh/exec" -o hinnat.json
+          curl -L "https://script.google.com/macros/s/AKfycbwe2FdM3rspxWFSuyToUvchoTjkkQco7zdkL0DBb78djKA0oVr4IblgvzL5sUcaB9nN/exec" -o hinnat.json
 
       - name: Tallenna muutokset GitHubiin
         run: |
